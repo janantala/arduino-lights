@@ -49,5 +49,23 @@ void loop(){
 
   light(2, pinC, pinD);
   delay(sleepTime);
-
+  
+  light(4, pinB, pinC, pinD, pinE);
+  delay(sleepTime);
+  
+  clear();
+  delay(sleepTime);
+  
+  light(1, pinB);
+  delay(sleepTime);
+  
+  light(1, pinC);
+  delay(sleepTime);
+  
+  light(1, pinD);
+  delay(sleepTime);
+  
+  light(1, pinE);
+  delay(sleepTime);
+  
 }
