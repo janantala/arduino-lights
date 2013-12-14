@@ -1,10 +1,12 @@
+#include <stdarg.h> 
+
 int pinA = 8;
 int pinB = 9;
 int pinC = 10;
 int pinD = 11;
 int pinE = 12;
 
-int sleepTime = 150;
+int sleepTime = 500;
 
 void clear(){
   digitalWrite(pinA, LOW);
@@ -12,6 +14,21 @@ void clear(){
   digitalWrite(pinC, LOW);
   digitalWrite(pinD, LOW);
   digitalWrite(pinE, LOW);
+}
+
+void light(int n, ...){
+  clear();
+  
+  va_list pins;
+  va_start(pins, n);
+    
+    for ( int x = 0; x < n; x++ ) {
+        int p = va_arg(pins, int);
+        Serial.println(p);
+        digitalWrite(p, HIGH);
+    }
+
+  va_end(pins);
 }
 
 void setup(){
@@ -23,24 +40,14 @@ void setup(){
 }
 
 void loop(){
+ 
+  light(4, pinB, pinC, pinD, pinE);
+  delay(sleepTime);
 
-  clear();
-  digitalWrite(pinA, HIGH);
+  light(2, pinB, pinE);
   delay(sleepTime);
-  
-  clear();
-  digitalWrite(pinB, HIGH);
+
+  light(2, pinC, pinD);
   delay(sleepTime);
-  
-  clear();
-  digitalWrite(pinC, HIGH);
-  delay(sleepTime);
-  
-  clear();
-  digitalWrite(pinD, HIGH);
-  delay(sleepTime);
-  
-  clear();
-  digitalWrite(pinE, HIGH);
-  delay(sleepTime);
+
 }
