@@ -41,19 +41,22 @@ void setup(){
 
 void loop(){
  
-  light(4, pinB, pinC, pinD, pinE);
+  light(5, pinA, pinB, pinC, pinD, pinE);
   delay(sleepTime);
 
-  light(2, pinB, pinE);
+  light(2, pinA, pinE);
   delay(sleepTime);
 
-  light(2, pinC, pinD);
+  light(2, pinB, pinD);
   delay(sleepTime);
   
-  light(4, pinB, pinC, pinD, pinE);
+  light(1, pinC);
   delay(sleepTime);
   
-  clear();
+  light(5, pinA, pinB, pinC, pinD, pinE);
+  delay(sleepTime);
+  
+  light(1, pinA);
   delay(sleepTime);
   
   light(1, pinB);
@@ -66,6 +69,18 @@ void loop(){
   delay(sleepTime);
   
   light(1, pinE);
+  delay(sleepTime);
+  
+  light(1, pinD);
+  delay(sleepTime);
+  
+  light(1, pinC);
+  delay(sleepTime);
+  
+  light(1, pinB);
+  delay(sleepTime);
+  
+  light(1, pinA);
   delay(sleepTime);
   
 }
